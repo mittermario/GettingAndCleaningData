@@ -6,14 +6,17 @@ X_test <- read.table("./UCI_HAR_Dataset/test/X_test.txt")
 y_test <- read.table("./UCI_HAR_Dataset/test/y_test.txt")
 subjects_test <- read.table("./UCI_HAR_Dataset/test/subject_test.txt")
 
+X_train <- read.table("./UCI_HAR_Dataset/train/X_train.txt")
+y_train <- read.table("./UCI_HAR_Dataset/train/y_train.txt")
+subjects_train <- read.table("./UCI_HAR_Dataset/train/subject_train.txt")
+
 ## Merge training and test sets into one data set.
-X <- X_test
-y <- y_test
-subjects <- subjects_test
-# merged_data <- read.table("./UCI_HAR_Dataset/test/X_test.txt")
+X <- rbind(X_test, X_train)
+y <- rbind(y_test, y_train)
+subjects <- rbind(subjects_test, subjects_train)
 
 ## first clean up round
-remove(X_test, y_test, subjects_test)
+remove(X_test, y_test, subjects_test, X_train, y_train, subjects_train)
 
 ## Read in information about the data features and labels
 activity_labels <- read.table("./UCI_HAR_Dataset/activity_labels.txt")
