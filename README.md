@@ -33,4 +33,4 @@ Good luck!
 
 ### Description of analysis files
 
-The codebook with all relevant information bout the variables and summaries can be found in CodeBook.md
+The codebook with all relevant information about the variables and summaries can be found in the markdown CodeBook.md in this repository.
