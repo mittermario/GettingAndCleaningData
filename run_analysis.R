@@ -62,7 +62,7 @@ X <- aggregate(X[, 3:ncol(X)],
           mean, na.rm=TRUE)
 
 ## create csv file with tidy data set
-write.csv(X, "./UCI_HAR_Dataset_tidy/average_by_subjectnumber_and_activity.csv")
+write.table(X, "./UCI_HAR_Dataset_tidy/average_by_subjectnumber_and_activity.txt", row.name = FALSE)
 
 ## final clean up round
 remove(X, activity_labels, features, subjects, y, y_activities, mean_std_indices)
