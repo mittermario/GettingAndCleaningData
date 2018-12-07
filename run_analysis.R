@@ -45,17 +45,11 @@ features <- mutate(features, V2 =  gsub("std", "StandardDeviation", gsub("\\-", 
 features <- mutate(features, V2 =  gsub("BodyBody", "Body", gsub("\\-", "", V2)))
 names(X) <- features$V2[mean_std_indices]
 
-## tidy data 1: add activity name by row.names and remove superficial row.names column again
-X <- merge(select(y_activities, activity), X, by = 0)
-X <- select(X, -Row.names)
+## tidy data 1: add activity name and add subjects data
+X <- cbind(select(y_activities, activity), X)
+X <- cbind(rename(subjects, subjectnumber = V1), X)
 
-
-## tidy data 2: add subjects data by row.names and remove superficial row.names column again
-subjects <- rename(subjects, subjectnumber = V1)
-X <- merge(select(subjects, subjectnumber), X, by = 0)
-X <- select(X, -Row.names)
-
-## tidy data 3: group by subjectnumber and activity and take average of each variable within group
+## tidy data 2: group by subjectnumber and activity and take average of each variable within group
 X <- aggregate(X[, 3:ncol(X)],
           list(subjectnumber = X$subjectnumber,
                activity = X$activity),

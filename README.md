@@ -8,9 +8,8 @@
 	* extract measurements of means and standard deviations
 	* replace indices by descriptive activity names to name the activities
 	* appropriately label variables in features
-	* tidy data 1: add activity name by row.names and remove superficial row.names column again
-	* tidy data 2: add subjects data by row.names and remove superficial row.names column again
-	* tidy data 3: group by subjectnumber and activity and take average of each variable within group
+	* tidy data 1: add activity name and add subjects data
+	* tidy data 2: group by subjectnumber and activity and take average of each variable within group
 	* create txt file with tidy data set
 * UCI_HAR_Dataset: original raw data
 * UCI_HAR_Dataset_tidy/average_by_subjectnumber_and_activity.csv: tidy data
