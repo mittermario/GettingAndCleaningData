@@ -1,3 +1,10 @@
+### Description of analysis files
+
+* UCI_HAR_Dataset: original raw data
+* run_analysis.R: R script that creates the tidy data from the original raw data
+* UCI_HAR_Dataset_tidy/average_by_subjectnumber_and_activity.csv: tidy data
+* CodeBook.md: The codebook with all relevant information about calculated variables and summaries in tidy data
+
 ### Assignment
 
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
@@ -30,7 +37,3 @@ You should create one R script called run_analysis.R that does the following.
 *    From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Good luck!
-
-### Description of analysis files
-
-The codebook with all relevant information about the variables and summaries can be found in the markdown CodeBook.md in this repository.

@@ -32,6 +32,17 @@ y_activities <- mutate(y, activity = activity_labels$V2[V1])
 
 ## appropriately label variables in features
 features <- mutate(features, V2 =  gsub("\\(\\)", "", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("Acc", "LinearAcceleration", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("fGravity", "FrequencyDomainSignalGravity", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("fBody", "FrequencyDomainSignalBody", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("tGravity", "TimeDomainSignalGravity", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("tBody", "TimeDomainSignalBody", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("Gyro", "AngularVelocity", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("mean", "Mean", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("Jerk", "Derivative", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("Mag", "EuclideanNorm", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("std", "StandardDeviation", gsub("\\-", "", V2)))
+features <- mutate(features, V2 =  gsub("BodyBody", "Body", gsub("\\-", "", V2)))
 names(X) <- features$V2[mean_std_indices]
 
 ## tidy data 1: add activity name by row.names and remove superficial row.names column again
