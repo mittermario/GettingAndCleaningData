@@ -1,9 +1,21 @@
 ### Description of analysis files
 
+* run_analysis.R: R script that creates tidy data from original raw data performing the following steps
+	* load required libraries
+	* Read in training and test sets
+	* Merge training and test sets into one data set.
+	* Read in information about the data features and labels
+	* extract measurements of means and standard deviations
+	* replace indices by descriptive activity names to name the activities
+	* appropriately label variables in features
+	* tidy data 1: add activity name by row.names and remove superficial row.names column again
+	* tidy data 2: add subjects data by row.names and remove superficial row.names column again
+	* tidy data 3: group by subjectnumber and activity and take average of each variable within group
+	* create txt file with tidy data set
 * UCI_HAR_Dataset: original raw data
-* run_analysis.R: R script that creates the tidy data from the original raw data
 * UCI_HAR_Dataset_tidy/average_by_subjectnumber_and_activity.csv: tidy data
 * CodeBook.md: The codebook with all relevant information about calculated variables and summaries in tidy data
+
 
 ### Assignment
 
